@@ -18,7 +18,7 @@ build:
   skip: true  # [not unix]
 
 requirements:
-  host:
+  build:
     - coreutils  # build.sh uses ln --relative
   run:
     # OpenJDK 8 or 11 is required as stated in the sbt documentation.
