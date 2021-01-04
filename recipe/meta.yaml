@@ -1,5 +1,5 @@
 {% set name = "sbt" %}
-{% set version = "1.4.5" %}
+{% set version = "1.4.6" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +10,7 @@ source:
   # that requires... sbt. It is a package build by itself. Since it is a jar, this
   # should not matter as it is essentially noarch.
   url: https://github.com/sbt/sbt/releases/download/v{{ version }}/sbt-{{ version }}.tgz
-  sha256: c05c6fdb435f30c730e323fcc1b98ba30f35f3d8c4c43c6448846a2b6231ffa5
+  sha256: 86a6f28e79966074101066ab1aa19267d0c8d44eae21daa93c9c6056ca6f9da4
 
 build:
   number: 0
@@ -18,7 +18,7 @@ build:
   skip: true  # [not unix]
 
 requirements:
-  host:
+  build:
     - coreutils  # build.sh uses ln --relative
   run:
     # OpenJDK 8 or 11 is required as stated in the sbt documentation.
