@@ -14,15 +14,16 @@ source:
 
 build:
   number: 0
-  # Since this is a java package, installation can also happen on Windows. However, the current maintainer can not test that.
-  skip: true  # [not unix]
+  noarch: generic
 
 requirements:
   build:
     - coreutils  # build.sh uses ln --relative
   run:
-    # OpenJDK 8 or 11 is required as stated in the sbt documentation.
-    - openjdk =8|11
+    # Since this is a java package, installation can also happen on Windows. However, the current maintainer can not test that.
+    - __unix
+    # OpenJDK 8 or later is required as stated in the sbt documentation.
+    - openjdk >=8
 
 test:
   commands:
