@@ -13,16 +13,17 @@ source:
   sha256: 9d01f7eb1a3830190d53ed4d8b8b9a6380f013ad30573a04e330d1de42ff0212
 
 build:
-  number: 0
-  # Since this is a java package, installation can also happen on Windows. However, the current maintainer can not test that.
-  skip: true  # [not unix]
+  number: 1
+  noarch: generic
 
 requirements:
   build:
     - coreutils  # build.sh uses ln --relative
   run:
-    # OpenJDK 8 or 11 is required as stated in the sbt documentation.
-    - openjdk =8|11
+    # Since this is a java package, installation can also happen on Windows. However, the current maintainer can not test that.
+    - __unix
+    # OpenJDK 8 or later is required as stated in the sbt documentation.
+    - openjdk >=8
 
 test:
   commands:

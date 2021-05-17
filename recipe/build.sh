@@ -3,11 +3,11 @@
 # Script inspired by the contents of the sbt debian packages.
 # Debian packages: https://dl.bintray.com/sbt/debian/
 
-mkdir -p $PREFIX/share/sbt
+mkdir -p $PREFIX/share/sbt/bin
 mkdir -p $PREFIX/bin
 
-cp -r * $PREFIX/share/sbt
+cp ./bin/sbt ./bin/sbt-launch.jar $PREFIX/share/sbt/bin/
 
 ln -rs $PREFIX/share/sbt/bin/sbt $PREFIX/bin/sbt
-ln -rs $PREFIX/share/sbt/bin/java9-rt-export.jar $PREFIX/bin/java9-rt-export.jar
+ln -rs $PREFIX/share/sbt/bin/sbt-launch.jar $PREFIX/bin/sbt-launch.jar
 
