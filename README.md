@@ -1,11 +1,11 @@
-About sbt
-=========
+About sbt-feedstock
+===================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sbt-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.scala-sbt.org
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sbt-feedstock/blob/main/LICENSE.txt)
 
 Summary: sbt is a build tool for Scala, Java, and more.
 
