@@ -1,5 +1,5 @@
 {% set name = "sbt" %}
-{% set version = "1.9.2" %}
+{% set version = "1.9.3" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +10,7 @@ source:
   # that requires... sbt. It is a package build by itself. Since it is a jar, this
   # should not matter as it is essentially noarch.
   url: https://github.com/sbt/sbt/releases/download/v{{ version }}/sbt-{{ version }}.tgz
-  sha256: 5dd43af46167a1ba0df63859bfae6e352fbed525e76622d8ebdc8914222532b2
+  sha256: 9ccf944eccb33c66830ef9ff9d46c3402741cdc6d883251045261db33e748e82
 
 build:
   number: 0
