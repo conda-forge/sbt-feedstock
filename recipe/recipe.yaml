@@ -16,12 +16,10 @@ source:
   sha256: a716dd018bd68bc7a95a2dd10337663aa76f443ad6c99deabe5eadd1adfc7639
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
-  # build:
-    # - coreutils  # build.sh uses ln --relative
   run:
     # Since this is a java package, installation can also happen on Windows. However, the current maintainer can not test that.
     - __unix
@@ -30,7 +28,8 @@ requirements:
 
 tests:
   - script:
-      - bash -c 'sbt --help | grep Usage'
+      - bash -c 'sbt --help | grep Usage'  # sbt --help gives exit code 1
+      # sbt-create prevents warning when there is no project or build.sbt present
       - sbt --sbt-create --version
 
 about:
