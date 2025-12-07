@@ -16,19 +16,19 @@ source:
   sha256: 1232818f91c39639a93bbe1108e12d94c7044a646a7847f1a3977b9e46716cd6
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
   run:
-    # Since this is a java package, installation can also happen on Windows. However, the current maintainer can not test that.
-    - __unix
     # OpenJDK 8 or later is required as stated in the sbt documentation.
     - openjdk >=8
 
 tests:
   - script:
-      - bash -c 'sbt --help | grep Usage'  # sbt --help gives exit code 1
+      - if: unix
+        then: bash -c 'sbt --help | grep Usage'  # sbt --help gives exit code 1
+        else: cmd /c "sbt --allow-empty --help || BREAK" | findstr "Usage"
       # sbt-create prevents warning when there is no project or build.sbt present
       - sbt --sbt-create --version
 
