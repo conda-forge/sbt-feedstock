@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: sbt
-  version: 1.11.7
+  version: "1.12.0"
 
 package:
   name: ${{ name|lower }}
@@ -13,10 +13,10 @@ source:
   # that requires... sbt. It is a package build by itself. Since it is a jar, this
   # should not matter as it is essentially noarch.
   url: https://github.com/sbt/sbt/releases/download/v${{ version }}/sbt-${{ version }}.tgz
-  sha256: 1232818f91c39639a93bbe1108e12d94c7044a646a7847f1a3977b9e46716cd6
+  sha256: e4ade3f4bdbe1e7445be9acf02cb1b3574beb460362e17287e246b7eaf9bb952
 
 build:
-  number: 1
+  number: 0
   noarch: generic
 
 requirements:
