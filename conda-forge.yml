@@ -1,6 +1,8 @@
 conda_forge_output_validation: true
 bot:
   automerge: true
+  abi_migration_branches:
+    - 'v1.x'
 github:
   branch_name: main
   tooling_branch_name: main
