@@ -1,6 +1,9 @@
 conda_forge_output_validation: true
 bot:
   automerge: true
+  version_updates:
+    allowed_tag_globs:
+      - "[0-9]*.[0-9]*.[0-9]*"
 github:
   branch_name: main
   tooling_branch_name: main
